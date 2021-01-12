@@ -9,4 +9,12 @@ class ListAdmin(admin.ModelAdmin):
 
     """ List Model Definition """
 
-    pass
+    list_display = (
+        "name",
+        "user",
+        "count_rooms",
+    )
+
+    search_fields = ("^name",)
+
+    filter_horizontal = ("rooms",)

@@ -34,7 +34,7 @@ class User(AbstractUser):
     CURRENCY_KRW = "kre"
     CURRENCY_CHOICES = ((CURRENCY_USD, "USD"), (CURRENCY_KRW, "KRW"))
 
-    avatar = models.ImageField(null=True)
+    avatar = models.ImageField(upload_to="avatars", null=True)
     gender = models.CharField(choices=GENDER_CHOICES, max_length=10, null=True)
     bio = models.TextField(default="")
     birthdate = models.DateField(null=True)
@@ -45,3 +45,4 @@ class User(AbstractUser):
         choices=CURRENCY_CHOICES, max_length=3, null=True, blank=True
     )
     superhost = models.BooleanField(default=False)
+    

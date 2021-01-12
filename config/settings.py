@@ -15,6 +15,7 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+print(BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -136,3 +137,8 @@ STATIC_URL = "/static/"
 # 기존 User 덮어쓰기
 # 'Users'라는 App 폴더 -> 'models.py' -> User라는 이름의 Class
 AUTH_USER_MODEL = "users.User"
+
+# MEDIA ROOT가 절대경로가 될 것이다
+MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
+
+MEDIA_URL = "/media/"
